@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Calendar.css';
 
 // Helper function to generate the days of the month
@@ -26,12 +26,6 @@ const generateCalendarMatrix = (year: number, month: number) => {
     // calendarMatrix.push([...initialDays, ...days]);
     calendarMatrix.push([...filledDays, ...remainingNulls]);
     return calendarMatrix;
-};
-
-
-
-const getDate = (event: React.MouseEvent<HTMLButtonElement>) => {
-
 };
 
 

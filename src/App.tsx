@@ -1,7 +1,6 @@
 import React, { useState, useEffect  } from 'react';
 import Modal from './components/Modal';
 import './App.css';
-import WeekdayDateRangePicker from "./WeekdayDateRangePicker"
 import Calendar from './components/Calendar';
 
 
@@ -16,8 +15,7 @@ const App: React.FC = () => {
     const [year, setYear] = useState<number | any | undefined>(currentDate.getFullYear());
     const [day, setDay] = useState<number | any | undefined>(null);
 
-    const [nextMonth, setNextMonth] = useState((currentDate.getMonth())+1);
-    const [nextYear, setNextYear] = useState((currentDate.getFullYear()));
+
     // const [day, setDay] = useState<number | any | undefined>(null);
 
     const [startDay, setStartDay] = useState<number | null>(null);
@@ -153,21 +151,15 @@ const App: React.FC = () => {
 
             setyearArray(dropDownYearArray)
         };
-      }, []); // Empty dependency array
+      }); // Empty dependency array
 
 
     //   console.log(yearArray, 'yearArray')
 
 
-      const fruits: string[] = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'];
       
 
-      const [selectedFruit, setSelectedFruit] = useState<string>('');
-
-  // Event handler for when the user selects an option
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedFruit(event.target.value);
-  };
+  
 
   const selectMonth = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setMonth(event.target.value);
