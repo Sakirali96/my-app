@@ -9,4 +9,19 @@ input.cal {
 .App {
   text-align: center;
   padding: 20px;
+} 
+
+
+.arrow {
+  color: #aaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.arrow:hover,
+.arrow:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

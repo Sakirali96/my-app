@@ -16,8 +16,8 @@ const generateCalendarMatrix = (year: number, month: number) => {
     const firstDay = getFirstDayOfMonth(year, month);
     const daysInMonth = getDaysInMonth(year, month + 1);
 
-    console.log(firstDay, "firstDay")
-    console.log(daysInMonth, "daysInMonth")
+    // console.log(firstDay, "firstDay")
+    // console.log(daysInMonth, "daysInMonth")
     const calendarMatrix = [];
     const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
     const initialDays = Array.from({ length: firstDay }, () => null);
@@ -36,6 +36,8 @@ const getDate = (event: React.MouseEvent<HTMLButtonElement>) => {
 
 
 interface CalendarProps {
+    onData: (data: number | any) => void;
+    items: string[];
     year: number;
     month: number;
     day: number;
@@ -44,21 +46,28 @@ interface CalendarProps {
     setYear: any;
 }
 
-const Calendar: React.FC<CalendarProps> = ({ year, month, day, setDay, setMonth, setYear }) => {
+const Calendar: React.FC<CalendarProps> = ({ year, month, day, setDay, setMonth, setYear, onData, items  }) => {
     // const [day, setDay] = useState<number |any | undefined>(undefined);
 
     const matrix = generateCalendarMatrix(year, month);
 
-    console.log(year, month, "Year")
-    console.log(matrix, "Year2")
-
-    const selectDate = (event: React.MouseEvent<HTMLButtonElement>) => {
-        console.log(day,month, year, "FullDate")
-        console.log(setDay,setMonth, setYear, "FullDate2")
-        setDay(day)
+      const handleButtonClick = (index: number) => {
+        onData(index);  // Call parent function with the index
         setMonth(month)
         setYear(year)
-    };
+
+      };
+
+    // console.log(year, month, "Year")
+    // console.log(matrix, "Year2")
+
+    // const selectDate = (event: React.MouseEvent<HTMLButtonElement>) => {
+    //     console.log(day,month, year, "FullDate")
+    //     console.log(setDay,setMonth, setYear, "FullDate2")
+    //     setDay(day)
+    //     setMonth(month)
+    //     setYear(year)
+    // };
 
 
     return (
@@ -76,15 +85,27 @@ const Calendar: React.FC<CalendarProps> = ({ year, month, day, setDay, setMonth,
                 <div key={i} className="calendar-week">
                     {week.map((day, j) => (
 
-                        <button key={j} className={`calendar-day-cell ${day ? '' : 'empty'}`}
-                            onClick={()=> {selectDate ; setDay(day)}}
+                        <button key={j} className={`calendar-day-cell ${day ? 'hover:bg-orange-300 ' : 'empty '}`}
+                            onClick={()=> {
+                                
+                                // setEndDay(day)
+                                //  setMonth(month)
+                                //  setYear(year)
+                                // setDay(day)
+                                // setInputValue(day)
+                                // sendDataToParent;
+                                handleButtonClick(j) 
+                            }}
                             disabled={day === null}
                         >
 
                             {day || 'X'}
                         </button>
+                        
 
-                    ), console.log('hello'))}
+                    ), 
+                    // console.log(sendDataToParent, 'inputValue')
+                    )}
                 </div>
             ))}
         </div>
