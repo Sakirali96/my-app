@@ -1,0 +1,46 @@
+.calendar {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    /* overflow: hidden; */
+}
+
+    .calendar-header {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        background-color: #f1f1f1;
+        font-weight: bold;
+    }
+
+    /* For medium devices (tablets or smaller screens) */
+@media (max-width: 768px) {
+    .calendar-header {
+        grid-template-columns: repeat(7, 1fr); /* 4 columns */
+    }
+}
+
+/* For small devices (mobile phones) */
+@media (max-width: 480px) {
+    .calendar-header {
+        grid-template-columns: repeat(7, 1fr); /* 2 columns for small screens */
+        grid-template-rows: auto; /* Allow rows to automatically adjust height */
+        text-align: left; /* Align text to left on mobile for readability */
+    }
+}
+
+.calendar-day, .calendar-day-cell {
+    /* display: flex; */
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.calendar-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.empty {
+    background-color: #f9f9f9;
+    color: #ccc;
+}
