@@ -8,6 +8,7 @@ const App: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const monthInName = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     const currentDate = new Date();
+    const checkDay = currentDate.getDate()
     // const year = currentDate.getFullYear();
     // const month = currentDate.getMonth();
 
@@ -151,7 +152,7 @@ const App: React.FC = () => {
 
             setyearArray(dropDownYearArray)
        
-      }, [currentDate.getDate()]); // Empty dependency array
+      }, [checkDay]); // Empty dependency array
 
 
     //   console.log(yearArray, 'yearArray')
