@@ -151,7 +151,7 @@ const App: React.FC = () => {
 
             setyearArray(dropDownYearArray)
        
-      }, []); // Empty dependency array
+      }, [currentDate.getDate()]); // Empty dependency array
 
 
     //   console.log(yearArray, 'yearArray')
