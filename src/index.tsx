@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import OrientationComponent from './components/OrientationComponent';
 import reportWebVitals from './reportWebVitals';
 
