@@ -8,7 +8,7 @@ const App: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const monthInName = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     const currentDate = new Date();
-    const checkDay = currentDate.getDate()
+    // const checkDay = currentDate.getDate()
     // const year = currentDate.getFullYear();
     // const month = currentDate.getMonth();
 
@@ -135,24 +135,22 @@ const App: React.FC = () => {
       };
 
 
-      useEffect(() => {
-       
-
-            const dropDownYearArray: number[] = [];
+    useEffect(() => {
+        const dropDownYearArray: number[] = [];
         // const today = new Date(); // Get current date
-         const currentYear = currentDate.getFullYear()
+        const currentYear = currentDate.getFullYear()
         // Loop to get the last n number of days
         for (let i = currentYear - 100; i <= currentYear + 100; i++) {
-        //   const year = currentDate.getFullYear() // Create a new date object for each iteration
-        //   year.push(i);
+            //   const year = currentDate.getFullYear() // Create a new date object for each iteration
+            //   year.push(i);
 
-          dropDownYearArray.push(i);
+            dropDownYearArray.push(i);
         }
         // console.log(dropDownYearArray, 'i')
 
-            setyearArray(dropDownYearArray)
-       
-      }, [checkDay]); // Empty dependency array
+        setyearArray(dropDownYearArray)
+
+    }, []); // Empty dependency array
 
 
     //   console.log(yearArray, 'yearArray')
