@@ -135,7 +135,7 @@ const App: React.FC = () => {
 
 
       useEffect(() => {
-        return () => {
+       
 
             const dropDownYearArray: number[] = [];
         // const today = new Date(); // Get current date
@@ -150,8 +150,8 @@ const App: React.FC = () => {
         // console.log(dropDownYearArray, 'i')
 
             setyearArray(dropDownYearArray)
-        };
-      }); // Empty dependency array
+       
+      }, []); // Empty dependency array
 
 
     //   console.log(yearArray, 'yearArray')
@@ -174,7 +174,7 @@ const App: React.FC = () => {
 
 
     return (
-        <div className="App">
+        <div className="App">  
             <h2 className='text-5xl text-center text-blue-600'>Calendar in TypeScript</h2>
             {/* <input type="date" placeholder="Select date"/> */}
             <input
